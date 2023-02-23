@@ -2,3 +2,6 @@
 
 -e .
 pytest
+flake8
+black
+isort

@@ -4,7 +4,6 @@ import pytest
 from _pytest.fixtures import SubRequest
 from click.testing import CliRunner
 
-
 CURRENT_DIR = path.dirname(path.abspath(__file__))
 
 

@@ -1,4 +1,4 @@
-from typing import Iterator, Any
+from typing import Any, Iterator
 
 from fastq import fastq_object
 
