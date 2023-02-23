@@ -9,8 +9,5 @@ setup(
     author_email="v.orlov@gmail.com",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    install_requires=[
-        "click==8.*",
-        "fastq==2.*",
-    ],
+    install_requires=["click==8.*", "fastq==2.*", "miniFasta==3.*"],
 )
