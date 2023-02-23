@@ -17,7 +17,7 @@ def sequence_amount(path: str):
 
     amount = count_sequences(fq)
 
-    click.echo(amount)
+    click.echo(amount, nl=False)
 
 
 @click.command()
@@ -27,7 +27,7 @@ def nucleotide_amount(path: str):
 
     amount = count_nucleotides(fq)
 
-    click.echo(amount)
+    click.echo(amount, nl=False)
 
 
 cli.add_command(sequence_amount)
