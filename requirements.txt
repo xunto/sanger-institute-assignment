@@ -1,0 +1,4 @@
+# requirements.txt for tests
+
+-e .
+pytest
