@@ -19,3 +19,4 @@ python -m sanger.assignment sequence-amount file.fastq.gz
 
 ## Things to improve:
 * Publish to PYPI repository for an easier installation.
+* More UX tests, such testing for invalid or missing FASTQ files.
