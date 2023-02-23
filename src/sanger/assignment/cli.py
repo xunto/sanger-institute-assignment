@@ -1,8 +1,8 @@
 import click
 import fastq
 
-from sanger.assignment.nucleotides import count_nucleotides
-from sanger.assignment.sequences import count_sequences
+from .nucleotides import count_nucleotides
+from .sequences import count_sequences
 
 
 @click.group()
