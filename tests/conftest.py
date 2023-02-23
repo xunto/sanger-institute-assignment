@@ -15,4 +15,17 @@ def runner() -> CliRunner:
 
 @pytest.fixture(params=["test.fastq", "test.fastq.gz"])
 def test_file_path(request: SubRequest) -> str:
-    return path.abspath(path.join(CURRENT_DIR, "fixtures", request.param))
+    """
+    Basic test file to perform tests on.
+
+    This fixture is parameterized to provide both ordinary
+    and gz'ed version of file.
+    """
+
+    return path.abspath(
+        path.join(
+            CURRENT_DIR,
+            "fixtures",
+            request.param,
+        )
+    )

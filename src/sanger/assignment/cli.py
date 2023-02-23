@@ -13,6 +13,12 @@ def cli():
 @click.command()
 @click.argument("path")
 def sequence_amount(path: str):
+    """
+    Count sequences in a FASTQ file.
+
+    PATH is a path to a FASTQ file.
+    """
+
     fq = fastq.read(path)
 
     amount = count_sequences(fq)
@@ -23,6 +29,12 @@ def sequence_amount(path: str):
 @click.command()
 @click.argument("path")
 def nucleotide_amount(path: str):
+    """
+    Count nucleotides in a FASTQ file.
+
+    PATH is a path to a FASTQ file.
+    """
+
     fq = fastq.read(path)
 
     amount = count_nucleotides(fq)
