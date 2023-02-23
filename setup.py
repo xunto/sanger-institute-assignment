@@ -10,4 +10,5 @@ setup(
     packages=find_packages("src"),
     package_dir={"": "src"},
     install_requires=["click==8.*", "fastq==2.*", "miniFasta==3.*"],
+    python_requires=">3.10",
 )
