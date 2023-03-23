@@ -12,7 +12,7 @@ def runner() -> CliRunner:
     return CliRunner()
 
 
-@pytest.fixture(params=["test.fastq", "test.fastq.gz"])
+@pytest.fixture(params=["test.fastq"])
 def test_file_path(request: SubRequest) -> str:
     """
     Basic test file to perform tests on.

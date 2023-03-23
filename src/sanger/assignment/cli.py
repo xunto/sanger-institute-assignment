@@ -1,46 +1,21 @@
 import click
 import fastq
 
-from .nucleotides import count_nucleotides
-from .sequences import count_sequences
-
-
-@click.group()
-def cli():
-    pass
+from .stats import collect_stats
 
 
 @click.command()
 @click.argument("path")
-def sequence_amount(path: str):
+def cli(path: str):
     """
-    Count sequences in a FASTQ file.
+    Collect stats for a FASTQ file.
 
     PATH is a path to a FASTQ file.
     """
 
     fq = fastq.read(path)
+    stats = collect_stats(fq)
 
-    amount = count_sequences(fq)
-
-    click.echo(amount, nl=False)
-
-
-@click.command()
-@click.argument("path")
-def nucleotide_amount(path: str):
-    """
-    Count nucleotides in a FASTQ file.
-
-    PATH is a path to a FASTQ file.
-    """
-
-    fq = fastq.read(path)
-
-    amount = count_nucleotides(fq)
-
-    click.echo(amount, nl=False)
-
-
-cli.add_command(sequence_amount)
-cli.add_command(nucleotide_amount)
+    click.echo(f"Nucleotid={stats.nuc_amount}")
+    click.echo(f"Sequences={stats.seq_amount}")
+    click.echo(f"GC%={stats.gc_percent:.2f}%")
